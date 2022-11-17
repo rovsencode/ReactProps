@@ -3,7 +3,9 @@ import React from 'react'
 function Inputs({ inputsValue, setInputsValue,setIsShowResult }) {
     const handleChangeInputValue = (e) => {
         // setInputsValue();
-        console.log(e.target.value);
+        const { name, value } = e.target;
+        // console.log(e.target.value);
+        setInputsValue({ ...inputsValue, [name]: value });
     };
     const handleClickedButton = () => setIsShowResult(false);
     {
@@ -14,7 +16,7 @@ function Inputs({ inputsValue, setInputsValue,setIsShowResult }) {
       
           <label>Fullname</label>
           <input placeholder='fullname' onChange={handleChangeInputValue} name='fullname' defaultValue={inputsValue.fullname}></input>
-          <button onClick={handleClickedButton}>Add input</button>
+          <button onClick={handleClickedButton}>Show</button>
       </>
   )
 }

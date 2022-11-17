@@ -10,7 +10,9 @@ function Home() {
     return (
         <>
            {isShowResult ? ( <Inputs inputsValue={inputsValue} setInputsValue={setInputsValue}
-                setIsShowResult={setIsShowResult} />) : <> </>}
+                setIsShowResult={setIsShowResult} />) : <>
+                    <p>{inputsValue.fullname}</p>
+            </>}
            
         </>
   
